@@ -1,0 +1,37 @@
+<html>
+<head>
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="vendor/jasmine-2.4.1.min.css" />
+
+  <script src="vendor/babel-core-5.8.23-browser.min.js"></script>
+
+  <script src="vendor/react-with-addons-15.0.2.js"></script>
+  <script src="vendor/react-dom-15.0.2.min.js"></script>
+  <script src="vendor/jasmine-2.4.1.min.js"></script>
+  <script src="vendor/jasmine-2.4.1-html.min.js"></script>
+  <script src="vendor/jasmine-2.4.1-boot.min.js"></script>
+
+</head>
+<body>
+  <script type="text/babel" src="todos.jsx"></script>
+  <script type="text/babel">
+    const { TestUtils } = React.addons;
+    describe('TodoApp', function () {
+      it('renders one and only one container', function () {
+        const app = TestUtils.renderIntoDocument(<TodoApp />);
+        const containers = TestUtils.scryRenderedDOMComponentsWithClass(app, 'todo-container')
+        expect(containers.length).toEqual(1);
+      })
+    });
+
+    // reboot jasmine now that babel'd scripts are processed
+    window.onload();
+  </script>
+
+  <ul class="app-links">
+    <li><a href="/index.html">Todos</a></li>
+    <li><a href="/test.html">Spec</a></li>
+  </ul>
+
+</body>
+</html>

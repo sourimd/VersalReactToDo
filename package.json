@@ -1,0 +1,15 @@
+{
+  "name": "react-todo",
+  "version": "1.0.0",
+  "description": "Add items to your agenda!",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server"
+  },
+  "author": "Versal Team <work@versal.com> (https://versal.com)",
+  "license": "ISC"
+}
